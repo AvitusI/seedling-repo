@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const postsPerPage = 10;
+const totalPages = Math.ceil(allPosts.length / postsPerPage);
+const currentPage = 1;
+const posts = allPosts.slice(0, postsPerPage);
+---
+
+<BaseLayout title="Blog | Seedling Sports" description="Science-backed articles for parents of young athletes in soccer, basketball, and football.">
+  <section class="container blog-listing">
+    <h1>Blog</h1>
+    <p class="blog-intro">Science-backed articles for parents of young athletes.</p>
+
+    <div class="post-list">
+      {posts.map((post) => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          pubDate={post.data.pubDate}
+          slug={post.id}
+          sports={post.data.sports}
+        />
+      ))}
+    </div>
+
+    {totalPages > 1 && (
+      <nav class="pagination" aria-label="Blog pagination">
+        <span class="page-current">Page {currentPage} of {totalPages}</span>
+      </nav>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-listing {
+    padding: 3rem 0 4rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-intro {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+  }
+
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .pagination {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+</style>

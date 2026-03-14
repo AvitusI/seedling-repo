@@ -1,0 +1,54 @@
+---
+const navLinks = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header class="site-header">
+  <nav class="container nav">
+    <a href="/" class="logo">Seedling Sports</a>
+    <ul class="nav-links">
+      {navLinks.map(({ href, label }) => (
+        <li><a href={href}>{label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Seedling Sports" description="We help parents make confident, science-backed decisions about their child's athletic development.">
+  <section class="container about">
+    <h1>About Seedling Sports</h1>
+    <div class="about-content">
+      <p>
+        We help parents make confident, science-backed decisions about their child's
+        athletic development.
+      </p>
+      <p>
+        Youth sports should be a positive experience — one that builds character, confidence,
+        and a lifelong love of movement. But for many families, it's become a source of stress,
+        confusion, and pressure.
+      </p>
+      <p>
+        Seedling Sports exists to change that. We translate the latest research in sports
+        science, child development, and psychology into clear, actionable guidance for parents
+        of young athletes.
+      </p>
+      <p>
+        Whether your child plays soccer, basketball, football, or any other sport — we're
+        here to help you support them the right way.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: var(--max-width-prose);
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .about-content p:first-child {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+</style>

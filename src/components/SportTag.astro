@@ -1,0 +1,23 @@
+---
+interface Props {
+  sport: string;
+}
+
+const { sport } = Astro.props;
+const label = sport.charAt(0).toUpperCase() + sport.slice(1);
+---
+
+<span class="sport-tag">{label}</span>
+
+<style>
+  .sport-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--color-bg-warm);
+    color: var(--color-text-light);
+    text-transform: capitalize;
+  }
+</style>

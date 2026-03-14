@@ -1,0 +1,83 @@
+---
+
+---
+
+<aside class="cta-box">
+  <h3>Get guidance personalised to your child</h3>
+  <p>
+    Seedling Sports gives you this kind of guidance — personalised to your child.
+    Coming soon to the App Store.
+  </p>
+  <form class="cta-form" onsubmit="return false;">
+    <input
+      type="email"
+      placeholder="Enter your email for early access"
+      aria-label="Email for early access"
+    />
+    <button type="submit">Notify Me</button>
+  </form>
+</aside>
+
+<style>
+  .cta-box {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--color-bg-warm);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-box p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .cta-form input {
+    flex: 1;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: var(--font-body);
+  }
+
+  .cta-form input:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -1px;
+  }
+
+  .cta-form button {
+    padding: 0.6rem 1.2rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+
+  .cta-form button:hover {
+    background: var(--color-primary-light);
+  }
+
+  @media (max-width: 480px) {
+    .cta-form {
+      flex-direction: column;
+    }
+  }
+</style>
