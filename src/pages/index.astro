@@ -33,7 +33,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       ))}
     </div>
     <div class="view-all">
-      <a href={`${import.meta.env.BASE_URL}/blog`}>View all articles &rarr;</a>
+      <a href="/blog">View all articles &rarr;</a>
     </div>
   </section>
 </BaseLayout>
